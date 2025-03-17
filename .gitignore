@@ -7,7 +7,6 @@ node_modules/
 .expo/
 dist/
 web-build/
-expo-env.d.ts
 
 # Native
 *.orig.*
@@ -36,11 +35,8 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
-# Sensitive files
-*.private.ts
-*.private.js
-
-# Personal notes
-dev-notes.md
-
-app-example
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
