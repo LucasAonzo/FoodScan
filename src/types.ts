@@ -1,20 +1,23 @@
-/**
- * Interface for a menu item analysis result
- */
-export type MenuAnalysisResult = {
-  /** Name of the dish */
+export interface NutritionalInfo {
+  calories: number;
+  protein: number;
+  carbs: number;
+  fat: number;
+}
+
+export interface MenuAnalysisResult {
   dishName: string;
-  /** Nutritional information */
-  nutritionalInfo: {
-    /** Calories in kcal */
-    calories: number;
-    /** Protein in grams */
-    protein: number;
-    /** Carbohydrates in grams */
-    carbs: number;
-    /** Fat in grams */
-    fat: number;
-  };
-  /** Description of the dish */
   description: string;
-};
+  nutritionalInfo: NutritionalInfo;
+  isVegan: boolean;
+  timestamp?: Date;
+}
+
+export interface MealHistory {
+  id: string;
+  menuItem: MenuAnalysisResult;
+  date: Date;
+  restaurantName?: string;
+}
+
+export type FilterType = 'all' | 'highProtein' | 'lowCalorie' | 'lowCarb' | 'vegan';
